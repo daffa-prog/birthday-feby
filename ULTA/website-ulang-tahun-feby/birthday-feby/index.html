@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5ec">
+  <meta name="description" content="Kejutan ulang tahun ke-22 untuk Feby, dengan cinta.">
+  <title>For Feby ♥ | Happy 22nd Birthday</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Musik ulang tahun: cukup satu pemutar audio -->
+  <audio id="birthday-music" loop preload="metadata">
+    <source src="music/golden-hour.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutaran audio.
+  </audio>
+
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="For Feby">for feby <span>♥</span></a>
+    <div class="topbar-note">a little surprise, made with love</div>
+    <button class="music-toggle" id="musicToggle" type="button"
+      aria-label="Putar atau jeda musik" aria-pressed="false">
+      ♫ <span id="musicLabel">Putar Musik</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- HALAMAN 1: KADO -->
+    <section class="screen hero-screen active" id="home" data-screen="home"
+      aria-labelledby="heroTitle">
+
+      <div class="hero-copy">
+        <p class="eyebrow">for my favorite person</p>
+        <h1 id="heroTitle">A little surprise<br>for <em>you</em>.</h1>
+        <p class="hero-subtitle">Ada sesuatu yang ingin aku kasih ke kamu…</p>
+      </div>
+
+      <button class="gift-button" id="openGift" type="button"
+        aria-label="Buka kotak kado untuk Feby">
+        <span class="gift-glow"></span>
+        <span class="gift-box">
+          <span class="gift-lid">
+            <span class="bow bow-left"></span>
+            <span class="bow bow-right"></span>
+            <span class="bow-knot"></span>
+          </span>
+          <span class="gift-body">
+            <span class="gift-ribbon"></span>
+            <span class="gift-tag">for feby <b>♥</b></span>
+            <span class="polka p1"></span>
+            <span class="polka p2"></span>
+            <span class="polka p3"></span>
+            <span class="polka p4"></span>
+            <span class="polka p5"></span>
+            <span class="polka p6"></span>
+            <span class="polka p7"></span>
+            <span class="polka p8"></span>
+            <span class="polka p9"></span>
+          </span>
+        </span>
+      </button>
+
+      <p class="tap-hint">klik kotak kadonya untuk membuka kejutan <span>↓</span></p>
+    </section>
+
+    <!-- HALAMAN 2: UCAPAN ULANG TAHUN -->
+    <section class="screen greeting-screen" id="greeting" data-screen="greeting"
+      aria-labelledby="birthdayTitle">
+
+      <div class="flower-corner flower-left" aria-hidden="true">✿ ❀ ✾</div>
+      <div class="flower-corner flower-right" aria-hidden="true">✿ ❀ ✾</div>
+
+      <div class="greeting-layout">
+        <div class="photo-frame hero-photo">
+          <img src="images/feby-kalian.jpg" alt="Foto kamu dan Feby"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+          <div class="photo-placeholder">
+            <span>♡</span>
+            <strong>Foto kamu &amp; Feby</strong>
+            <small>Taruh foto di folder images<br>dan beri nama <code>feby-kalian.jpg</code></small>
+          </div>
+
+          <span class="tape"></span>
+        </div>
+
+        <div class="greeting-text">
+          <p class="eyebrow">today is all about you</p>
+          <h2 id="birthdayTitle">Happy Birthday,<br><em>my love.</em> <span>♥</span></h2>
+          <p class="birthday-line">Selamat ulang tahun yang ke-<strong>22</strong>, Feby.</p>
+          <p class="greeting-intro">
+            Semoga hari ini membawa banyak senyum, hangat, dan hal-hal baik untuk kamu.
+          </p>
+          <button class="primary-button" type="button" data-next="letter">
+            Buka surat kecil dariku <span>♡</span>
+          </button>
+        </div>
+      </div>
+
+      <button class="text-link back-home" type="button" data-next="0">
+        ← Kembali ke kado
+      </button>
+    </section>
+
+    <!-- HALAMAN 3: SURAT CINTA -->
+    <section class="screen letter-screen" id="letter" data-screen="letter"
+      aria-labelledby="letterHeading">
+
+      <div class="letter-shell">
+        <div class="letter-heading">
+          <p class="eyebrow">a letter from my heart</p>
+          <h2 id="letterHeading">Untuk kamu, <em>Feby</em> ♥</h2>
+          <p class="letter-subtitle">
+            Ada beberapa hal yang ingin aku sampaikan di hari spesialmu.
+          </p>
+        </div>
+
+        <div class="letter-card">
+          <div class="letter-topline">
+            <span>♡</span>
+            <span data-slide-count>1 / 6</span>
+          </div>
+
+          <div class="letter-content" id="letterContent" aria-live="polite"></div>
+
+          <div class="letter-controls">
+            <button class="secondary-button" id="prevSlide"
+              data-letter-prev type="button">← Sebelumnya</button>
+
+            <div class="slide-dots" id="slideDots" aria-label="Pilih bagian surat">
+              <button class="slide-dot active" type="button" aria-label="Surat bagian 1"></button>
+              <button class="slide-dot" type="button" aria-label="Surat bagian 2"></button>
+              <button class="slide-dot" type="button" aria-label="Surat bagian 3"></button>
+              <button class="slide-dot" type="button" aria-label="Surat bagian 4"></button>
+              <button class="slide-dot" type="button" aria-label="Surat bagian 5"></button>
+              <button class="slide-dot" type="button" aria-label="Surat bagian 6"></button>
+            </div>
+
+            <button class="primary-button" id="nextSlide"
+              data-letter-next type="button">Lanjutkan →</button>
+          </div>
+        </div>
+
+        <p class="letter-signature">with all my love, always <span>♥</span></p>
+
+        <button class="text-link" type="button" data-next="greeting">
+          ← Kembali
+        </button>
+      </div>
+    </section>
+
+    <!-- HALAMAN 4: GALERI KENANGAN -->
+    <section class="screen gallery-screen" id="gallery" data-screen="gallery"
+      aria-labelledby="galleryTitle">
+
+      <div class="gallery-heading">
+        <p class="eyebrow">little pieces of us</p>
+        <h2 id="galleryTitle">Our <em>Moments</em> ♥</h2>
+        <p>Kenangan kecil yang punya tempat besar di hati.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="memory-card tilt-one">
+          <img src="images/kenangan-1.jpg" alt="Kenangan kalian 1"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder">
+            <span>♡</span><strong>Kenangan 1</strong>
+            <small>images/kenangan-1.jpg</small>
+          </div>
+          <p>one of my favorite days</p>
+        </div>
+
+        <div class="memory-card tilt-two">
+          <img src="images/kenangan-2.jpg" alt="Kenangan kalian 2"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder">
+            <span>♡</span><strong>Kenangan 2</strong>
+            <small>images/kenangan-2.jpg</small>
+          </div>
+          <p>just you and me</p>
+        </div>
+
+        <div class="memory-card tilt-three">
+          <img src="images/kenangan-3.jpg" alt="Kenangan kalian 3"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder">
+            <span>♡</span><strong>Kenangan 3</strong>
+            <small>images/kenangan-3.jpg</small>
+          </div>
+          <p>a moment to keep</p>
+        </div>
+
+        <div class="memory-card tilt-four">
+          <img src="images/kenangan-4.jpg" alt="Kenangan kalian 4"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-placeholder">
+            <span>♡</span><strong>Kenangan 4</strong>
+            <small>images/kenangan-4.jpg</small>
+          </div>
+          <p>my favorite person</p>
+        </div>
+      </div>
+
+      <button class="primary-button" type="button" data-next="ending">
+        Lihat pesan terakhir ♥
+      </button>
+    </section>
+
+    <!-- HALAMAN 5: PESAN TERAKHIR -->
+    <section class="screen ending-screen" id="ending" data-screen="ending"
+      aria-labelledby="endingTitle">
+
+      <div class="ending-content">
+        <p class="eyebrow">and one last thing…</p>
+        <h2 id="endingTitle">Thank you for<br><em>being you.</em> <span>♡</span></h2>
+
+        <p>
+          Semoga kamu selalu sehat, selalu bahagia, dan semua impian kamu menemukan jalannya.
+        </p>
+        <p>
+          Terima kasih sudah menjadi salah satu bagian terpenting dalam perjalanan hidupku.
+        </p>
+
+        <div class="ending-heart">♥</div>
+
+        <p class="ending-final">
+          Happy 22nd Birthday, Feby.<br>
+          <em>I love you, more than words can explain.</em>
+        </p>
+
+        <button class="outline-button" type="button" data-next="0">
+          Buka kejutan lagi ↻
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    made with love, just for feby <span>♥</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
